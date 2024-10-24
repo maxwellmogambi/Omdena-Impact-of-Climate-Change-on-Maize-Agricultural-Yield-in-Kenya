@@ -82,6 +82,6 @@ if st.button("Predict Maize Yield"):
 
         # Display the predicted yield and quality
         st.success(f"Predicted Maize Yield: {predicted_yield:.2f} MT/HA")
-        st.write(f"Yield Quality: **{yield_quality}**")
+        st.write(f"Yield: **{yield_quality}**")
     except Exception as e:
         st.error(f"Error in prediction: {str(e)}")
