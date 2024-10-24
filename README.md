@@ -1,26 +1,19 @@
 # Impact of Climate Change on Maize Agricultural Yield in Kenya
+This project addresses the critical challenge of declining maize yields in Kenya due to climate change. By leveraging machine learning techniques, we aim to develop a predictive model that accurately forecasts maize yields based on climate variables and other relevant factors. This model will empower Kenyan farmers, policymakers, and researchers with data-driven insights to make informed decisions about crop management, resource allocation, and adaptation strategies, ensuring food security and economic stability in the face of a changing climate.
 
 **Project Duration:** July 31, 2024 – October 31, 2024
 
 ## Table of Contents
 
-- [Executive Summary](#executive-summary)
 - [Problem Statement](#problem-statement)
 - [Project Objectives](#project-objectives)
 - [Project Methodology](#project-methodology)
 - [Project Deliverables](#project-deliverables)
 - [Project Timeline](#project-timeline)
-- [Project Team and Expertise](#project-team-and-expertise)
-- [Sustainability and Scalability](#sustainability-and-scalability)
-- [Project Budget](#project-budget)
 - [Conclusion](#conclusion)
-- [Participation](#participation)
-- [Benefits](#benefits)
-- [Requirements](#requirements)
 
-## Executive Summary
 
-This project addresses the critical challenge of declining maize yields in Kenya due to climate change. By leveraging machine learning techniques, we aim to develop a predictive model that accurately forecasts maize yields based on climate variables and other relevant factors. This model will empower Kenyan farmers, policymakers, and researchers with data-driven insights to make informed decisions about crop management, resource allocation, and adaptation strategies, ensuring food security and economic stability in the face of a changing climate.
+
 
 ## Problem Statement
 
@@ -62,48 +55,16 @@ Maize, the staple food crop in Kenya, faces significant threats from climate cha
 
 ## Project Timeline
 
-| Phase | Activity                                        | Start Date         | End Date           |
-|-------|------------------------------------------------|---------------------|---------------------|
-| 1     | Data Acquisition and Preprocessing              | July 13, 2024      | August 10, 2024     |
-| 2     | Feature Engineering and Model Development       | August 13, 2024    | September 10, 2024  |
-| 3     | Model Evaluation, Deployment, and Dissemination | September 14, 2024  | October 12, 2024    |
+| Phase | Activity                                        | Start Date         | End Date            |
+|-------|-------------------------------------------------|--------------------|---------------------|
+| 1     | Data Acquisition and Preprocessing              | July 31, 2024      | August 31, 2024     |
+| 2     | Feature Engineering and Model Development       | Septemper 1, 2024  | September 30, 2024  |
+| 3     | Model Evaluation, Deployment, and Dissemination | October 1, 2024    | October 31, 2024    |
 
-## Project Team and Expertise
-
-The project team comprises experts in data science, machine learning, agronomy, and climate science. We will collaborate with:
-
-- **Jomo Kenyatta University of Agriculture and Technology (JKUAT):** Expertise in agricultural science and data analysis.
-- **Kenya Meteorological Department:** Providing access to historical and real-time climate data.
-- **Ministry of Agriculture, Livestock, Fisheries and Cooperatives:** Sharing agricultural statistics and expertise.
-
-## Sustainability and Scalability
-
-The project will establish a framework for continuous model improvement by incorporating new data and refining algorithms. We will explore partnerships with mobile network operators to leverage their infrastructure for wider dissemination of model predictions through SMS services.
-
-## Project Budget
-
-The estimated project budget is $[Insert Budget] to cover personnel costs, data acquisition, software licenses, travel, and workshop expenses. We will seek funding from organizations dedicated to promoting climate change adaptation and food security in developing countries.
 
 ## Conclusion
 
 This project offers a proactive and data-driven approach to address the pressing challenge of declining maize yields in Kenya due to climate change. By empowering stakeholders with accurate predictions and actionable insights, we aim to contribute significantly to building a more resilient and food-secure future for Kenya.
-
-## Participation
-
-This project is part of the Omdena Local Chapter Challenge, welcoming participants of all experience levels, from beginners to experts. It is designed to be educational and collaborative.
-
-## Benefits
-
-- **Real-World Impact:** Address a critical issue using your skills.
-- **Portfolio Development:** Enhance your project portfolio with practical experience.
-- **Networking Opportunities:** Connect with other professionals and potential employers in the AI and agricultural sectors.
-- **Access to Paid Projects:** Become a recognized Omdena Top Talent.
-
-## Requirements
-
-- Proficiency in English.
-- Suitable for AI/Data Science beginners and senior collaborators.
-- A learning mindset and a collaborative spirit.
 
 ---
 
