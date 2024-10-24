@@ -40,80 +40,30 @@ def predict_yield(input_data):
 st.title("Maize Yield Prediction in Kenya")
 st.write("Enter the climate parameters to predict maize yield:")
 
-# Add an image for aesthetic appeal
-# st.image("path_to_your_image.jpg", use_column_width=True)  # Replace with your image path
-
-
-
-# Create a dictionary of input fields and their default values with min/max values
-input_defaults = {
-    'temperature_2m (°C)': (24.0, 26.0),  # Min, Max values
-    'temperature_2m_max (°C)': (31.0, 33.0),  # Min, Max values
-    'temperature_2m_min (°C)': (18.0, 20.0),  # Min, Max values
-    'total_precipitation_sum (mm)': (409.0, 991.0),  # Min, Max values
-    'u_component_of_wind_10m (m/s)': (-2.1, -1.3),  # Min, Max values
-    'precipitation (mm)': (443.0, 971.0)  # Min, Max values
-}
-
-# Initialize session state using the dictionary
-for key, (min_value, max_value) in input_defaults.items():
-    if key not in st.session_state:
-        st.session_state[key] = min_value  # Default value set to min value
-
-# Create 2 columns
+# Create 2 columns for layout
 col1, col2 = st.columns(2)
 
-# Column 1 inputs with min and max values
+# Column 1 inputs with sliders
 with col1:
-    st.session_state['temperature_2m (°C)'] = st.number_input(
-        "Temperature 2m (°C)", 
-        value=st.session_state['temperature_2m (°C)'], 
-        min_value=input_defaults['temperature_2m (°C)'][0], 
-        max_value=input_defaults['temperature_2m (°C)'][1]
-    )
-    st.session_state['temperature_2m_max (°C)'] = st.number_input(
-        "Max Temperature 2m (°C)", 
-        value=st.session_state['temperature_2m_max (°C)'], 
-        min_value=input_defaults['temperature_2m_max (°C)'][0], 
-        max_value=input_defaults['temperature_2m_max (°C)'][1]
-    )
-    st.session_state['temperature_2m_min (°C)'] = st.number_input(
-        "Min Temperature 2m (°C)", 
-        value=st.session_state['temperature_2m_min (°C)'], 
-        min_value=input_defaults['temperature_2m_min (°C)'][0], 
-        max_value=input_defaults['temperature_2m_min (°C)'][1]
-    )
+    temperature_2m = st.slider("Temperature 2m (°C)", min_value=24.0, max_value=26.0, value=24.0)
+    temperature_2m_max = st.slider("Max Temperature 2m (°C)", min_value=31.0, max_value=33.0, value=31.0)
+    temperature_2m_min = st.slider("Min Temperature 2m (°C)", min_value=18.0, max_value=20.0, value=18.0)
 
-# Column 2 inputs with min and max values
+# Column 2 inputs with sliders
 with col2:
-    st.session_state['total_precipitation_sum (mm)'] = st.number_input(
-        "Total Precipitation (mm)", 
-        value=st.session_state['total_precipitation_sum (mm)'], 
-        min_value=input_defaults['total_precipitation_sum (mm)'][0], 
-        max_value=input_defaults['total_precipitation_sum (mm)'][1]
-    )
-    st.session_state['u_component_of_wind_10m (m/s)'] = st.number_input(
-        "U Component of Wind 10m (m/s)", 
-        value=st.session_state['u_component_of_wind_10m (m/s)'], 
-        min_value=input_defaults['u_component_of_wind_10m (m/s)'][0], 
-        max_value=input_defaults['u_component_of_wind_10m (m/s)'][1]
-    )
-    st.session_state['precipitation (mm)'] = st.number_input(
-        "Precipitation (mm)", 
-        value=st.session_state['precipitation (mm)'], 
-        min_value=input_defaults['precipitation (mm)'][0], 
-        max_value=input_defaults['precipitation (mm)'][1]
-    )
+    total_precipitation_sum = st.slider("Total Precipitation (mm)", min_value=409.0, max_value=991.0, value=409.0)
+    u_component_of_wind_10m = st.slider("U Component of Wind 10m (m/s)", min_value=-2.1, max_value=-1.3, value=-2.1)
+    precipitation = st.slider("Precipitation (mm)", min_value=443.0, max_value=971.0, value=443.0)
 
 # Button to make predictions
 if st.button("Predict Maize Yield"):
     input_data = [
-        st.session_state['temperature_2m (°C)'], 
-        st.session_state['temperature_2m_max (°C)'], 
-        st.session_state['temperature_2m_min (°C)'], 
-        st.session_state['total_precipitation_sum (mm)'], 
-        st.session_state['u_component_of_wind_10m (m/s)'], 
-        st.session_state['precipitation (mm)']
+        temperature_2m, 
+        temperature_2m_max, 
+        temperature_2m_min, 
+        total_precipitation_sum, 
+        u_component_of_wind_10m, 
+        precipitation
     ]
 
     # Log inputs for debugging (optional)
@@ -122,6 +72,16 @@ if st.button("Predict Maize Yield"):
     # Call the predict function
     try:
         predicted_yield = predict_yield(input_data)
+        # Determine the yield quality
+        if predicted_yield < 1.2:
+            yield_quality = "Bad"
+        elif predicted_yield > 1.7:
+            yield_quality = "Good"
+        else:
+            yield_quality = "Normal"
+
+        # Display the predicted yield and quality
         st.success(f"Predicted Maize Yield: {predicted_yield:.2f} MT/HA")
+        st.write(f"Yield Quality: **{yield_quality}**")
     except Exception as e:
         st.error(f"Error in prediction: {str(e)}")
