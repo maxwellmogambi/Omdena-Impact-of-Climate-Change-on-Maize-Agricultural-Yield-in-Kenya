@@ -1,6 +1,8 @@
 # Impact of Climate Change on Maize Agricultural Yield in Kenya
 This project addresses the critical challenge of declining maize yields in Kenya due to climate change. By leveraging machine learning techniques, we aim to develop a predictive model that accurately forecasts maize yields based on climate variables and other relevant factors. This model will empower Kenyan farmers, policymakers, and researchers with data-driven insights to make informed decisions about crop management, resource allocation, and adaptation strategies, ensuring food security and economic stability in the face of a changing climate.
 
+App: https://omdena-maize-agricultural-yield-in-kenya.streamlit.app/
+
 **Project Duration:** July 31, 2024 – October 31, 2024
 
 ## Table of Contents
